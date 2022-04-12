@@ -54,9 +54,35 @@ namespace Project
                 return true;
             }
         }
-        public static Boolean Test3(IWebDriver driver)
-        {
-            return true;
+        public static Boolean Test3Tweet(IWebDriver driver)
+        { //if t-text includes tweet text return true
+            Thread.Sleep(3000);
+            IWebElement lblTweeted = driver.FindElement(By.ClassName("t-text"));
+
+            try
+            {
+                IWebElement clicky = driver.FindElement(By.Id("myTweet"));
+                clicky.Click();
+                String txtTweeted = "YOYOYOYO";
+                txtTweeted = lblTweeted.Text;
+                
+                tweet(driver, txtTweeted);
+                
+                if (txtTweeted.Contains(lblTweeted.Text))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            
         }
         public static Boolean Test4(IWebDriver driver)
         {
@@ -100,6 +126,17 @@ namespace Project
             IWebElement btnLogin = driver.FindElement(By.Id("button"));
             btnLogin.Click();
 
+        }
+        static void tweet(IWebDriver driver, String strTweet)
+        {
+            driver.Url = "http://47.55.247.242/site1/index.php?user=1025";
+            
+
+            IWebElement txtTweet = driver.FindElement(By.Id("myTweet"));
+            txtTweet.SendKeys(strTweet);
+
+            IWebElement btnSend = driver.FindElement(By.ClassName("btnTweet"));
+            btnSend.Click();
         }
     }
 }
