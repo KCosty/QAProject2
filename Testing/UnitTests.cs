@@ -216,6 +216,22 @@ namespace Project
                 return false;
             }
         }
+        public static Boolean Test11Retweet(IWebDriver driver)
+        {
+            try
+            {
+                //xpath =/html/body/div/div/div[2]/div[2]/div[1]/b    /html/body/div/div/div[2]/div[2]/div[1]/b
+                Thread.Sleep(2000);
+                retweet(driver);
+                
+                return true;
+                
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         static void logIn(IWebDriver driver, String strUserName, String strPass)
         {
@@ -280,6 +296,11 @@ namespace Project
         {
             IWebElement btnconhome = driver.FindElement(By.CssSelector("[href*='index.php']"));
             btnconhome.Click();
+        }
+        static void retweet(IWebDriver driver)
+        {
+            IWebElement btnretweet = driver.FindElement(By.Name("retweetClick"));
+            btnretweet.Click();
         }
     }
 }

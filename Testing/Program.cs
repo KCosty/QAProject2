@@ -84,6 +84,12 @@ namespace Project
             blnTest10 = UnitTests.Test10ContactToHome(driver);
             TestResult(blnTest10);
 
+            //Test11
+            Console.WriteLine("Test11 - RetweetClick: ");
+            Boolean blnTest11;
+            blnTest11 = UnitTests.Test11Retweet(driver);
+            TestResult(blnTest11);
+
         }
         static void TestResult(Boolean blnResult)
         {
