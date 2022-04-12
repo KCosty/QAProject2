@@ -62,29 +62,15 @@ namespace Project
             try
             {
                 IWebElement clicky = driver.FindElement(By.Id("button"));
-                //clicky.Click();
+                
                 String txtTweeted = "YOYOYOYO";
-                //txtTweeted = lblTweeted.Text;
-                //clicky.Click();
-                //tweet(driver, txtTweeted);
+              
                 tweet(driver, txtTweeted);
-                //if (lblTweeted.Text.Contains(txtTweeted))
-                //{
-                //    tweet(driver, txtTweeted);
-                //    return true;
-                //}
+                
                 clicky.Click();
-                tweet(driver, txtTweeted);
+                //tweet(driver, txtTweeted);
                 return true;
-                //if (txtTweeted.Equals(lblTweeted.Text))
-                //{
-                //    //tweet(driver, txtTweeted);
-                //    return true;
-                //}
-                //else
-                //{
-                //    return false;
-                //}
+                
             }
             catch
             {
@@ -94,9 +80,25 @@ namespace Project
 
             
         }
-        public static Boolean Test4(IWebDriver driver)
+        public static Boolean Test4Follow(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                follow(driver);
+                IAlert alertError = driver.SwitchTo().Alert();
+                
+                if (alertError.Text.Contains("You are NOW FOLLOWING "))
+                {
+                    alertError.Accept();
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
         public static Boolean Test5(IWebDriver driver)
         {
@@ -150,6 +152,11 @@ namespace Project
 
             IWebElement btnSend = driver.FindElement(By.TagName("btnTweet"));
             btnSend.Click();
+        }
+        static void follow(IWebDriver driver)
+        {
+            IWebElement btnfollow = driver.FindElement(By.Name("follow"));
+            btnfollow.Click();
         }
     }
 }

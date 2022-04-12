@@ -42,6 +42,10 @@ namespace Project
             blnTest03 = UnitTests.Test3Tweet(driver);
             TestResult(blnTest03);
 
+            Console.WriteLine("Test4 - Follow: ");
+            Boolean blnTest04;
+            blnTest04 = UnitTests.Test4Follow(driver);
+            TestResult(blnTest04);
 
         }
         static void TestResult(Boolean blnResult)
