@@ -113,7 +113,7 @@ namespace Project
                 {
                     return false;
                 }
-                return true;
+                else { return true; }
             }
 
             catch
@@ -123,9 +123,24 @@ namespace Project
 
             
         }
-        public static Boolean Test6(IWebDriver driver)
+        public static Boolean Test6Moments(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                Thread.Sleep(2000);
+                momentsclick(driver);
+                string currentURL = driver.Url;
+                if(currentURL == "http://47.55.247.242/site1/moments.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
         public static Boolean Test7(IWebDriver driver)
         {
@@ -181,6 +196,11 @@ namespace Project
         {
             IWebElement btnhome = driver.FindElement(By.XPath("Home"));
             btnhome.Click();
+        }
+        static void momentsclick(IWebDriver driver)
+        {
+            IWebElement btnmom = driver.FindElement(By.XPath("Moments"));
+            btnmom.Click();
         }
     }
 }

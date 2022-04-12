@@ -49,10 +49,16 @@ namespace Project
             TestResult(blnTest04);
 
             //Test5
-            Console.WriteLine("Test5 - HomePage: ");
+            Console.WriteLine("Test5 - HomePageClick: ");
             Boolean blnTest05;
             blnTest05 = UnitTests.Test5HomeClick(driver);
             TestResult(blnTest05);
+
+            //Test6
+            Console.WriteLine("Test6 - MomentsClick: ");
+            Boolean blnTest06;
+            blnTest06 = UnitTests.Test6Moments(driver);
+            TestResult(blnTest06);
 
         }
         static void TestResult(Boolean blnResult)
