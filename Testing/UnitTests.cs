@@ -11,7 +11,7 @@ namespace Project
 {
     public static class UnitTests
     {
-        public static Boolean Test1Login(IWebDriver driver)
+        public static Boolean Test1BadLogIn(IWebDriver driver)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Project
             
         }
 
-        public static Boolean Test2BadLogIn(IWebDriver driver)
+        public static Boolean Test2LogIn(IWebDriver driver)
         {
             
             Thread.Sleep(5000);
