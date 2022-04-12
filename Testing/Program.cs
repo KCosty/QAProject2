@@ -23,10 +23,17 @@ namespace Project
             //creating the WebDriver object
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
 
+            //Test 1
             Console.WriteLine("Test1 - log in: ");
             Boolean blnTest01;
             blnTest01 = UnitTests.Test1Login(driver);
             TestResult(blnTest01);
+
+            //Test 2
+            Console.WriteLine("Test2 - Bad log in credentials: ");
+            Boolean blnTest02;
+            blnTest02 = UnitTests.Test2BadLogIn(driver);
+            TestResult(blnTest02);
 
 
         }

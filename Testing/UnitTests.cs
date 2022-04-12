@@ -15,32 +15,44 @@ namespace Project
         {
             try
             {
-                //filling out the form
-                logIn(driver, "123123", "123123");
+                logIn(driver, "1234", "1234");
                 IAlert alertError = driver.SwitchTo().Alert();
                 String txtAlert = alertError.Text;
                 if (txtAlert.Contains(alertError.Text))
                 {
                     alertError.Accept();
                     return false;
-                    
                 }
                 return true;
-
-
-
-                //fail url http://47.55.247.242/site1/Login.php?loginError=Incorrect%20Screen%20Name.%20Please%20Try%20again! no elements to grab
-                
             }
             catch
             {
                 return true;
             }
+            
         }
 
-        public static Boolean Test2(IWebDriver driver)
+        public static Boolean Test2BadLogIn(IWebDriver driver)
         {
-            return true;
+            
+            Thread.Sleep(5000);
+            driver.Navigate().GoToUrl("http://47.55.247.242/site1/login.php");
+            try
+            {
+                logIn(driver, "nick", "asdf");
+                IAlert alertError = driver.SwitchTo().Alert();
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    alertError.Accept();
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
         }
         public static Boolean Test3(IWebDriver driver)
         {
