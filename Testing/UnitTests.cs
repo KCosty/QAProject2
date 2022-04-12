@@ -84,6 +84,7 @@ namespace Project
         {
             try
             {
+                Thread.Sleep(2000);
                 follow(driver);
                 IAlert alertError = driver.SwitchTo().Alert();
                 
@@ -100,9 +101,27 @@ namespace Project
             }
             
         }
-        public static Boolean Test5(IWebDriver driver)
+        public static Boolean Test5HomeClick(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                Thread.Sleep(2000);
+                homeclick(driver);
+                string currentURL = driver.Url;
+
+                if (currentURL != "http://47.55.247.242/site1/index.php")
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            catch
+            {
+                return true;
+            }
+
+            
         }
         public static Boolean Test6(IWebDriver driver)
         {
@@ -157,6 +176,11 @@ namespace Project
         {
             IWebElement btnfollow = driver.FindElement(By.Name("follow"));
             btnfollow.Click();
+        }
+        static void homeclick(IWebDriver driver)
+        {
+            IWebElement btnhome = driver.FindElement(By.XPath("Home"));
+            btnhome.Click();
         }
     }
 }

@@ -42,10 +42,17 @@ namespace Project
             blnTest03 = UnitTests.Test3Tweet(driver);
             TestResult(blnTest03);
 
+            //Test4 -- works when there's people to be followed
             Console.WriteLine("Test4 - Follow: ");
             Boolean blnTest04;
             blnTest04 = UnitTests.Test4Follow(driver);
             TestResult(blnTest04);
+
+            //Test5
+            Console.WriteLine("Test5 - HomePage: ");
+            Boolean blnTest05;
+            blnTest05 = UnitTests.Test5HomeClick(driver);
+            TestResult(blnTest05);
 
         }
         static void TestResult(Boolean blnResult)
