@@ -198,9 +198,23 @@ namespace Project
                 return false;
             }
         }
-        public static Boolean Test10(IWebDriver driver)
+        public static Boolean Test10ContactToHome(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                Thread.Sleep(2000);
+                contacttohome(driver);
+                string currentURL = driver.Url;
+                if (currentURL == "http://47.55.247.242/site1/index.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         static void logIn(IWebDriver driver, String strUserName, String strPass)
@@ -261,6 +275,11 @@ namespace Project
         {
             IWebElement btncontact = driver.FindElement(By.CssSelector("[href*='contactus']"));
             btncontact.Click();
+        }
+        static void contacttohome(IWebDriver driver)
+        {
+            IWebElement btnconhome = driver.FindElement(By.CssSelector("[href*='index.php']"));
+            btnconhome.Click();
         }
     }
 }

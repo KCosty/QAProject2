@@ -67,16 +67,22 @@ namespace Project
             TestResult(blnTest07);
 
             //Test8
-            Console.WriteLine("Test - MessagesClick: ");
+            Console.WriteLine("Test8 - MessagesClick: ");
             Boolean blnTest08;
             blnTest08 = UnitTests.Test8Messages(driver);
             TestResult(blnTest08);
 
             //Test9
-            Console.WriteLine("Test - ContactUsClick: ");
+            Console.WriteLine("Test9 - ContactUsClick: ");
             Boolean blnTest09;
             blnTest09 = UnitTests.Test9ContactUs(driver);
             TestResult(blnTest09);
+
+            //Test10
+            Console.WriteLine("Test10 - ContactUsToHomeClick: ");
+            Boolean blnTest10;
+            blnTest10 = UnitTests.Test10ContactToHome(driver);
+            TestResult(blnTest10);
 
         }
         static void TestResult(Boolean blnResult)
