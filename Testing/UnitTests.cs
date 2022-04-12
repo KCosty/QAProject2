@@ -180,9 +180,23 @@ namespace Project
             }
            
         }
-        public static Boolean Test9(IWebDriver driver)
+        public static Boolean Test9ContactUs(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                Thread.Sleep(2000);
+                contact(driver);
+                string currentURL = driver.Url;
+                if (currentURL == "http://47.55.247.242/site1/contactus")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
         }
         public static Boolean Test10(IWebDriver driver)
         {
@@ -242,6 +256,11 @@ namespace Project
         {
             IWebElement btnmsg = driver.FindElement(By.CssSelector("[href*='DirectMessage']"));
             btnmsg.Click();
+        }
+        static void contact(IWebDriver driver)
+        {
+            IWebElement btncontact = driver.FindElement(By.CssSelector("[href*='contactus']"));
+            btncontact.Click();
         }
     }
 }

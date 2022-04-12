@@ -66,6 +66,18 @@ namespace Project
             blnTest07 = UnitTests.Test7Notifications(driver);
             TestResult(blnTest07);
 
+            //Test8
+            Console.WriteLine("Test - MessagesClick: ");
+            Boolean blnTest08;
+            blnTest08 = UnitTests.Test8Messages(driver);
+            TestResult(blnTest08);
+
+            //Test9
+            Console.WriteLine("Test - ContactUsClick: ");
+            Boolean blnTest09;
+            blnTest09 = UnitTests.Test9ContactUs(driver);
+            TestResult(blnTest09);
+
         }
         static void TestResult(Boolean blnResult)
         {
