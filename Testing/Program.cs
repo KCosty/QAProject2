@@ -60,6 +60,12 @@ namespace Project
             blnTest06 = UnitTests.Test6Moments(driver);
             TestResult(blnTest06);
 
+            //Test7
+            Console.WriteLine("Test7 - NotificationsClick: ");
+            Boolean blnTest07;
+            blnTest07 = UnitTests.Test7Notifications(driver);
+            TestResult(blnTest07);
+
         }
         static void TestResult(Boolean blnResult)
         {

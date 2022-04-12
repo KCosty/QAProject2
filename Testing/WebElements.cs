@@ -24,34 +24,7 @@ namespace Project
             return txtPassword;
         }*/
 
-        public static IWebElement ddlSubject(IWebDriver driver)
-        {
-            IWebElement ddlSubject = driver.FindElement(By.Id("id_contact"));
-            return ddlSubject;
-        }
-
-        public static IWebElement txtEmail(IWebDriver driver)
-        {
-            IWebElement txtEmail = driver.FindElement(By.Id("email"));
-            return txtEmail;
-        }
-
-        public static IWebElement txtOrderRef(IWebDriver driver)
-        {
-            IWebElement txtOrderRef = driver.FindElement(By.Id("id_order"));
-            return txtOrderRef;
-        }
-
-        public static IWebElement txtMessage(IWebDriver driver)
-        {
-            IWebElement txtMessage = driver.FindElement(By.Id("message"));
-            return txtMessage;
-        }
-        public static IWebElement btnSend(IWebDriver driver)
-        {
-            IWebElement btnSend = driver.FindElement(By.Id("submitMessage"));
-            return btnSend;
-        }
+        
 
     }
 }

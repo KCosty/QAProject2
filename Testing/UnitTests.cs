@@ -113,7 +113,7 @@ namespace Project
                 {
                     return false;
                 }
-                else { return true; }
+                else{return true;}
             }
 
             catch
@@ -142,9 +142,24 @@ namespace Project
             }
             
         }
-        public static Boolean Test7(IWebDriver driver)
+        public static Boolean Test7Notifications(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                Thread.Sleep(2000);
+                notifications(driver);
+                string currentURL = driver.Url;
+                if (currentURL == "http://47.55.247.242/site1/notifications.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
         public static Boolean Test8(IWebDriver driver)
         {
@@ -194,13 +209,19 @@ namespace Project
         }
         static void homeclick(IWebDriver driver)
         {
-            IWebElement btnhome = driver.FindElement(By.XPath("Home"));
+            IWebElement btnhome = driver.FindElement(By.CssSelector("[href*='index.php']"));
             btnhome.Click();
         }
         static void momentsclick(IWebDriver driver)
         {
-            IWebElement btnmom = driver.FindElement(By.XPath("Moments"));
+            IWebElement btnmom = driver.FindElement(By.CssSelector("[href*='moments.php']"));
             btnmom.Click();
+        }
+        static void notifications(IWebDriver driver)
+        {
+            //IWebElement btnnotify = driver.FindElement(By.XPath("Notifications")); //*[@id="navbarsExampleDefault"]/ul/li[3]/a
+            IWebElement btnnotify = driver.FindElement(By.CssSelector("[href*='notifications.php']"));
+            btnnotify.Click();
         }
     }
 }
