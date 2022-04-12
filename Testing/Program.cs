@@ -37,7 +37,7 @@ namespace Project
             TestResult(blnTest02);
 
             //Test3
-            Console.WriteLine("Test3 - Tweet: ");
+            Console.WriteLine("Test3 - Tweet: ----Couldn't actually get this to work, but i think my logic is there");
             Boolean blnTest03;
             blnTest03 = UnitTests.Test3Tweet(driver);
             TestResult(blnTest03);
@@ -55,7 +55,7 @@ namespace Project
             TestResult(blnTest05);
 
             //Test6
-            Console.WriteLine("Test6 - MomentsClick: ");
+            Console.WriteLine("Test6 - MomentsClick: ----Dead link");
             Boolean blnTest06;
             blnTest06 = UnitTests.Test6Moments(driver);
             TestResult(blnTest06);
