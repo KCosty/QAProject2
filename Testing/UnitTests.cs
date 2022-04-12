@@ -161,9 +161,24 @@ namespace Project
             }
             
         }
-        public static Boolean Test8(IWebDriver driver)
+        public static Boolean Test8Messages(IWebDriver driver)
         {
-            return true;
+            try
+            {
+                Thread.Sleep(2000);
+                messages(driver);
+                string currentURL = driver.Url;
+                if (currentURL == "http://47.55.247.242/site1/DirectMessage.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch
+            {
+                return false;
+            }
+           
         }
         public static Boolean Test9(IWebDriver driver)
         {
@@ -222,6 +237,11 @@ namespace Project
             //IWebElement btnnotify = driver.FindElement(By.XPath("Notifications")); //*[@id="navbarsExampleDefault"]/ul/li[3]/a
             IWebElement btnnotify = driver.FindElement(By.CssSelector("[href*='notifications.php']"));
             btnnotify.Click();
+        }
+        static void messages(IWebDriver driver)
+        {
+            IWebElement btnmsg = driver.FindElement(By.CssSelector("[href*='DirectMessage']"));
+            btnmsg.Click();
         }
     }
 }
