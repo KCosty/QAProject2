@@ -57,28 +57,38 @@ namespace Project
         public static Boolean Test3Tweet(IWebDriver driver)
         { //if t-text includes tweet text return true
             Thread.Sleep(3000);
-            IWebElement lblTweeted = driver.FindElement(By.ClassName("t-text"));
+            //IWebElement lblTweeted = driver.FindElement(By.ClassName("t-text"));
 
             try
             {
-                IWebElement clicky = driver.FindElement(By.Id("myTweet"));
-                clicky.Click();
+                IWebElement clicky = driver.FindElement(By.Id("button"));
+                //clicky.Click();
                 String txtTweeted = "YOYOYOYO";
-                txtTweeted = lblTweeted.Text;
-                
+                //txtTweeted = lblTweeted.Text;
+                //clicky.Click();
+                //tweet(driver, txtTweeted);
                 tweet(driver, txtTweeted);
-                
-                if (txtTweeted.Contains(lblTweeted.Text))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                //if (lblTweeted.Text.Contains(txtTweeted))
+                //{
+                //    tweet(driver, txtTweeted);
+                //    return true;
+                //}
+                clicky.Click();
+                tweet(driver, txtTweeted);
+                return true;
+                //if (txtTweeted.Equals(lblTweeted.Text))
+                //{
+                //    //tweet(driver, txtTweeted);
+                //    return true;
+                //}
+                //else
+                //{
+                //    return false;
+                //}
             }
             catch
             {
+                Console.WriteLine("Test tweet failed");
                 return false;
             }
 
@@ -135,7 +145,10 @@ namespace Project
             IWebElement txtTweet = driver.FindElement(By.Id("myTweet"));
             txtTweet.SendKeys(strTweet);
 
-            IWebElement btnSend = driver.FindElement(By.ClassName("btnTweet"));
+            IWebElement btnTweet = driver.FindElement(By.Id("myTweet"));
+            btnTweet.Click();
+
+            IWebElement btnSend = driver.FindElement(By.TagName("btnTweet"));
             btnSend.Click();
         }
     }
