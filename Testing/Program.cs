@@ -22,6 +22,9 @@ namespace Project
         {
             //creating the WebDriver object
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
+            //ChromeOptions option = new ChromeOptions();
+            //option.AddArgument("start-maximized");
+            //COULDN'T GET THE WINDOW TO START MAXIMIZED, FOR THE TESTS TO WORK YOU HAVE TO HAVE THE WINDOW MAXIMIZED
 
             //Test 1
             Console.WriteLine("Test1 - Bad log in credentials: ");
@@ -43,7 +46,7 @@ namespace Project
             TestResult(blnTest03);
 
             //Test4 -- works when there's people to be followed
-            Console.WriteLine("Test4 - Follow: ");
+            Console.WriteLine("Test4 - Follow: ----Works when there's people to follow");
             Boolean blnTest04;
             blnTest04 = UnitTests.Test4Follow(driver);
             TestResult(blnTest04);
@@ -89,6 +92,18 @@ namespace Project
             Boolean blnTest11;
             blnTest11 = UnitTests.Test11Retweet(driver);
             TestResult(blnTest11);
+
+            //Test12
+            Console.WriteLine("Test12 - ReplyClick");
+            Boolean blnTest12;
+            blnTest12 = UnitTests.Test12Reply(driver);
+            TestResult(blnTest12);
+
+            //Test13
+            Console.WriteLine("Test13 - Reply Message");
+            Boolean blnTest13;
+            blnTest13 = UnitTests.Test13ReplyMsg(driver);
+            TestResult(blnTest13);
 
         }
         static void TestResult(Boolean blnResult)

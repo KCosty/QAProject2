@@ -232,6 +232,46 @@ namespace Project
                 return false;
             }
         }
+        public static Boolean Test12Reply(IWebDriver driver)
+        {
+            try
+            {
+                Thread.Sleep(2000);
+                reply(driver);
+                string currentURL = driver.Url;
+
+                if (currentURL == "http://47.55.247.242/site1/reply.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+
+            catch
+            {
+                return false;
+            }
+        }
+        public static Boolean Test13ReplyMsg(IWebDriver driver)
+        {
+            try
+            {
+                Thread.Sleep(2000);
+                replymsg(driver);
+                string currentURL = driver.Url;
+
+                if (currentURL == "http://47.55.247.242/site1/index.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+
+            catch
+            {
+                return false;
+            }
+        }
 
         static void logIn(IWebDriver driver, String strUserName, String strPass)
         {
@@ -302,6 +342,20 @@ namespace Project
             IWebElement btnretweet = driver.FindElement(By.Name("retweetClick"));
             btnretweet.Click();
         }
+        static void reply(IWebDriver driver)
+        {
+            IWebElement btnreply = driver.FindElement(By.Name("replyClick"));
+            btnreply.Click();
+        }
+        static void replymsg(IWebDriver driver)
+        {
+            IWebElement txtreply = driver.FindElement(By.Id("replyText"));
+            txtreply.SendKeys("This is my message to you and it's very interesting.");
+
+            IWebElement btnreplymsg = driver.FindElement(By.Name("submit"));
+            btnreplymsg.Click();
+        }
+
 
     }
 }
