@@ -105,6 +105,12 @@ namespace Project
             blnTest13 = UnitTests.Test13ReplyMsg(driver);
             TestResult(blnTest13);
 
+            //Test14
+            Console.WriteLine("Test14 - Logout");
+            Boolean blnTest14;
+            blnTest14 = UnitTests.Test14Logout(driver);
+            TestResult(blnTest14);
+
         }
         static void TestResult(Boolean blnResult)
         {

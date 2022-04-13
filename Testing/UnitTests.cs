@@ -272,6 +272,26 @@ namespace Project
                 return false;
             }
         }
+        public static Boolean Test14Logout(IWebDriver driver)
+        {
+            try
+            {
+                Thread.Sleep(2000);
+                logout(driver);
+                string currentURL = driver.Url;
+
+                if (currentURL == "http://47.55.247.242/site1/login.php")
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+
+            catch
+            {
+                return false;
+            }
+        }
 
         static void logIn(IWebDriver driver, String strUserName, String strPass)
         {
@@ -354,6 +374,14 @@ namespace Project
 
             IWebElement btnreplymsg = driver.FindElement(By.Name("submit"));
             btnreplymsg.Click();
+        }
+        static void logout(IWebDriver driver)
+        {
+            IWebElement btndropdown = driver.FindElement(By.Id("dropdown01"));
+            btndropdown.Click();
+
+            IWebElement btnlogout = driver.FindElement(By.CssSelector("[href*='logout.php']"));
+            btnlogout.Click();
         }
 
 
