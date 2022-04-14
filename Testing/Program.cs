@@ -24,7 +24,7 @@ namespace Project
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
             //ChromeOptions option = new ChromeOptions();
             //option.AddArgument("start-maximized");
-            //COULDN'T GET THE WINDOW TO START MAXIMIZED, FOR THE TESTS TO WORK YOU HAVE TO HAVE THE WINDOW MAXIMIZED
+            //COULDN'T GET THE WINDOW TO START MAXIMIZED FOR THE TESTS TO WORK. YOU HAVE TO HAVE THE WINDOW MAXIMIZED
 
             //Test 1
             Console.WriteLine("Test1 - Bad log in credentials: ");
@@ -39,7 +39,7 @@ namespace Project
             blnTest02 = UnitTests.Test2LogIn(driver);
             TestResult(blnTest02);
 
-            //Test3
+            //Test3 - 
             Console.WriteLine("Test3 - Tweet: ----Couldn't actually get this to work, but i think my logic is there");
             Boolean blnTest03;
             blnTest03 = UnitTests.Test3Tweet(driver);
@@ -111,6 +111,89 @@ namespace Project
             blnTest14 = UnitTests.Test14Logout(driver);
             TestResult(blnTest14);
 
+            //Test15
+            Console.WriteLine("Test15 - Logout");
+            Boolean blnTest15;
+            blnTest15 = UnitTests.Test15Logout(driver);
+            TestResult(blnTest15);
+
+            //Test16
+            Console.WriteLine("Test16 - Logout");
+            Boolean blnTest16;
+            blnTest16 = UnitTests.Test16Logout(driver);
+            TestResult(blnTest16);
+
+            //Test17
+            Console.WriteLine("Test17 - Logout");
+            Boolean blnTest17;
+            blnTest17 = UnitTests.Test14Logout(driver);
+            TestResult(blnTest17);
+
+            //Test18
+            Console.WriteLine("Test18 - Logout");
+            Boolean blnTest18;
+            blnTest18 = UnitTests.Test18Logout(driver);
+            TestResult(blnTest18);
+
+            //Test19
+            Console.WriteLine("Test19 - Logout");
+            Boolean blnTest19;
+            blnTest19 = UnitTests.Test19Logout(driver);
+            TestResult(blnTest19);
+
+            //Test20
+            Console.WriteLine("Test20 - Logout");
+            Boolean blnTest20;
+            blnTest20 = UnitTests.Test20Logout(driver);
+            TestResult(blnTest20);
+
+            //Test21
+            Console.WriteLine("Test21 - Logout");
+            Boolean blnTest21;
+            blnTest21 = UnitTests.Test21Logout(driver);
+            TestResult(blnTest21);
+
+            //Test22
+            Console.WriteLine("Test22 - Logout");
+            Boolean blnTest22;
+            blnTest22 = UnitTests.Test22Logout(driver);
+            TestResult(blnTest22);
+
+            //Test23
+            Console.WriteLine("Test23 - Logout");
+            Boolean blnTest23;
+            blnTest23 = UnitTests.Test23Logout(driver);
+            TestResult(blnTest23);
+
+            //Test24
+            Console.WriteLine("Test24 - Logout");
+            Boolean blnTest24;
+            blnTest24 = UnitTests.Test24Logout(driver);
+            TestResult(blnTest24);
+
+            //Test25
+            Console.WriteLine("Test25 - Logout");
+            Boolean blnTest25;
+            blnTest25 = UnitTests.Test25Logout(driver);
+            TestResult(blnTest25);
+
+            //Test26
+            Console.WriteLine("Test26 - Logout");
+            Boolean blnTest26;
+            blnTest26 = UnitTests.Test26Logout(driver);
+            TestResult(blnTest26);
+
+            //Test27
+            Console.WriteLine("Test27 - Logout");
+            Boolean blnTest27;
+            blnTest14 = UnitTests.Test27Logout(driver);
+            TestResult(blnTest27);
+
+            //Test28
+            Console.WriteLine("Test28 - Logout");
+            Boolean blnTest28;
+            blnTest28 = UnitTests.Test28Logout(driver);
+            TestResult(blnTest28);
         }
         static void TestResult(Boolean blnResult)
         {
@@ -120,7 +203,7 @@ namespace Project
             }
             else
             {
-                Console.WriteLine("Test has failed");
+                Console.WriteLine("Test has FAILED!!!!");
             }
         }
     }
