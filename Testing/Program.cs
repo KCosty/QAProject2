@@ -111,88 +111,76 @@ namespace Project
             TestResult(blnTest14);
 
             //Test15
-            Console.WriteLine("Test15 - Logout");
+            Console.WriteLine("Test15 - TweetSpecialChar");
             Boolean blnTest15;
-            blnTest15 = UnitTests.Test15Logout(driver);
+            blnTest15 = UnitTests.Test15(driver);
             TestResult(blnTest15);
 
             //Test16
-            Console.WriteLine("Test16 - Logout");
+            Console.WriteLine("Test16 - EditProfPic");
             Boolean blnTest16;
-            blnTest16 = UnitTests.Test16Logout(driver);
+            blnTest16 = UnitTests.Test16(driver);
             TestResult(blnTest16);
 
             //Test17
-            Console.WriteLine("Test17 - Logout");
+            Console.WriteLine("Test17 - TrendingPeopleClick");
             Boolean blnTest17;
-            blnTest17 = UnitTests.Test14Logout(driver);
+            blnTest17 = UnitTests.Test17(driver);
             TestResult(blnTest17);
 
             //Test18
-            Console.WriteLine("Test18 - Logout");
+            Console.WriteLine("Test18 - CheckEmail");
             Boolean blnTest18;
-            blnTest18 = UnitTests.Test18Logout(driver);
+            blnTest18 = UnitTests.Test18(driver);
             TestResult(blnTest18);
 
             //Test19
-            Console.WriteLine("Test19 - Logout");
+            Console.WriteLine("Test19 - BlankSubmitTweet");
             Boolean blnTest19;
-            blnTest19 = UnitTests.Test19Logout(driver);
+            blnTest19 = UnitTests.Test19(driver);
             TestResult(blnTest19);
 
             //Test20
-            Console.WriteLine("Test20 - Logout");
+            Console.WriteLine("Test20 - ValidSignIn");
             Boolean blnTest20;
-            blnTest20 = UnitTests.Test20Logout(driver);
+            blnTest20 = UnitTests.Test20(driver);
             TestResult(blnTest20);
 
             //Test21
-            Console.WriteLine("Test21 - Logout");
+            Console.WriteLine("Test21 - RegisterClick");
             Boolean blnTest21;
-            blnTest21 = UnitTests.Test21Logout(driver);
+            blnTest21 = UnitTests.Test21(driver);
             TestResult(blnTest21);
 
             //Test22
-            Console.WriteLine("Test22 - Logout");
+            Console.WriteLine("Test22 - PhoneNumber");
             Boolean blnTest22;
-            blnTest22 = UnitTests.Test22Logout(driver);
+            blnTest22 = UnitTests.Test22(driver);
             TestResult(blnTest22);
 
             //Test23
-            Console.WriteLine("Test23 - Logout");
+            Console.WriteLine("Test23 - EmptySignUp");
             Boolean blnTest23;
-            blnTest23 = UnitTests.Test23Logout(driver);
+            blnTest23 = UnitTests.Test23(driver);
             TestResult(blnTest23);
 
             //Test24
-            Console.WriteLine("Test24 - Logout");
+            Console.WriteLine("Test24 - PwordMatch");
             Boolean blnTest24;
-            blnTest24 = UnitTests.Test24Logout(driver);
+            blnTest24 = UnitTests.Test24(driver);
             TestResult(blnTest24);
 
             //Test25
-            Console.WriteLine("Test25 - Logout");
+            Console.WriteLine("Test25 -Address ");
             Boolean blnTest25;
-            blnTest25 = UnitTests.Test25Logout(driver);
+            blnTest25 = UnitTests.Test25(driver);
             TestResult(blnTest25);
 
             //Test26
-            Console.WriteLine("Test26 - Logout");
+            Console.WriteLine("Test26 - PostalCode");
             Boolean blnTest26;
-            blnTest26 = UnitTests.Test26Logout(driver);
+            blnTest26 = UnitTests.Test26(driver);
             TestResult(blnTest26);
-
-            //Test27
-            Console.WriteLine("Test27 - Logout");
-            Boolean blnTest27;
-            blnTest14 = UnitTests.Test27Logout(driver);
-            TestResult(blnTest27);
-
-            //Test28
-            Console.WriteLine("Test28 - Logout");
-            Boolean blnTest28;
-            blnTest28 = UnitTests.Test28Logout(driver);
-            TestResult(blnTest28);
 
 
             Thread.Sleep(15000);

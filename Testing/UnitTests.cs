@@ -10,15 +10,17 @@ namespace Project
 {
     class UnitTests
     {
+        //Reset()
         public static Boolean Test1BadLogIn(IWebDriver driver)
         {
             try
             {
                 logIn(driver, "1234", "1234");
-                IWebElement alertError = driver.FindElement(By.ClassName("/////////"));
+                IAlert alertError = driver.SwitchTo().Alert();
                 String txtAlert = alertError.Text;
                 if (txtAlert.Contains(alertError.Text))
                 {
+                    alertError.Accept();
                     return false;
                 }
                 return true;
@@ -31,13 +33,15 @@ namespace Project
 
         public static Boolean Test2LogIn(IWebDriver driver)
         {
+            driver.Navigate().GoToUrl("http://47.55.247.242/site1/login.php");
             try
             {
                 logIn(driver, "nick", "asdf");
-                IWebElement alertError = driver.FindElement(By.ClassName("/////////"));
+                IAlert alertError = driver.SwitchTo().Alert();
                 String txtAlert = alertError.Text;
                 if (txtAlert.Contains(alertError.Text))
                 {
+                    alertError.Accept();
                     return false;
                 }
                 return true;
@@ -48,34 +52,37 @@ namespace Project
             }
         }
 
-        public static Boolean Test3Tweet(IWebDriver driver,  String txtTweeted)
+        public static Boolean Test3Tweet(IWebDriver driver)
         {
             try
             {
-                logIn(driver, "YOYOYOYO");
-                    IWebElement alertError = driver.FindElement(By.ClassName("/////////"));
-                    String txtAlert = alertError.Text;
-                    if (txtAlert.Contains(alertError.Text))
-                    {
-                        return false;
-                    }
-                    return true;
-                }
-                catch
-                {
-                    return true;
-                }
-            }
+                IWebElement clicky = driver.FindElement(By.Id("myTweet"));
 
-        public static Boolean Test4Follow(IWebDriver driver)
+                //String txtTweeted = "YOYOYOYO";
+
+                Tweet(driver, "");
+
+                clicky.Click();
+                //tweet(driver, txtTweeted);
+                return true;
+
+            }
+            catch
+            {
+                Console.WriteLine("Test tweet failed");
+                return false;
+            }
+        }
+            public static Boolean Test4Follow(IWebDriver driver)
         {
             try
             {
-                follow(driver, );
-                IWebElement alertError = driver.FindElement(By.ClassName("/////////"));
+                follow(driver);
+                IAlert alertError = driver.SwitchTo().Alert();
                 String txtAlert = alertError.Text;
                 if (alertError.Text.Contains("You are NOW FOLLOWING "))
                 {
+                    alertError.Accept();
                     return true;
                 }
                 return false;
@@ -251,7 +258,7 @@ namespace Project
         {
             try
             {
-                replymsg(driver);
+                replymsg(driver, "This message is very interesting");
                 string currentURL = driver.Url;
                 if (currentURL == "http://47.55.247.242/site1/index.php")
                 {
@@ -289,8 +296,233 @@ namespace Project
             }
         }
 
+        public static Boolean Test15(IWebDriver driver)
+        {
+            try
+            {
+                tweetSpecChar(driver, "%$@#%^&*!");
+                IWebElement alertError = driver.FindElement(By.Id("myTweet"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
 
+        public static Boolean Test16(IWebDriver driver)
+        {
+            try
+            {
+                editProfPic(driver);
+                IWebElement alertError = driver.FindElement(By.ClassName("[href*='edit_photo.php']"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
 
+        public static Boolean Test17(IWebDriver driver)
+        {
+            try
+            {
+                TrendingPeople(driver);
+                IWebElement alertError = driver.FindElement(By.Name("Trending"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test18(IWebDriver driver)
+        {
+            try
+            {
+                email(driver, "whatwhatwhat69@@ehehehe.c3");
+                IWebElement alertError = driver.FindElement(By.Id("email"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test19(IWebDriver driver)
+        {
+            try
+            {
+                blankTweet(driver, "");
+                IWebElement alertError = driver.FindElement(By.CssSelector("myTweet"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test20(IWebDriver driver)
+        {
+            try
+            {
+                signIn(driver,  "");
+                IWebElement alertError = driver.FindElement(By.Id("login_form"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test21(IWebDriver driver)
+        {
+            try
+            {
+                register(driver, "");
+                IWebElement alertError = driver.FindElement(By.ClassName("btn btn-primary btn-lg btn-block login-button"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test22(IWebDriver driver)
+        {
+            try
+            {
+                phoneNum(driver, "506543212344");
+                IWebElement alertError = driver.FindElement(By.Id("phone"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test23(IWebDriver driver)
+        {
+            try
+            {
+               blankSignUp(driver, "");
+                IWebElement alertError = driver.FindElement(By.CssSelector("[href*='signup_proc.php']"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test24(IWebDriver driver)
+        {
+            try
+            {
+                pwrdMatch(driver);
+                IWebElement alertError = driver.FindElement(By.Id("confirm"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test25(IWebDriver driver)
+        {
+            try
+            {
+                address(driver, "one happy str33t");
+                IWebElement alertError = driver.FindElement(By.Id("address"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static Boolean Test26(IWebDriver driver)
+        {
+            try
+            {
+                postalCode(driver, "3e1a5a");
+                IWebElement alertError = driver.FindElement(By.Id("postalCode"));
+                String txtAlert = alertError.Text;
+                if (txtAlert.Contains(alertError.Text))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
+        }
 
 
 
@@ -310,8 +542,6 @@ namespace Project
         }
 
 
-
-
         static void Tweet(IWebDriver driver, String strTweet)
         {
             driver.Url = "http://47.55.247.242/site1/index.php?user=1025";
@@ -325,7 +555,6 @@ namespace Project
             IWebElement btnSend = driver.FindElement(By.TagName("btnTweet"));
             btnSend.Click();
         }
-
 
 
         static void follow(IWebDriver driver)
@@ -374,10 +603,10 @@ namespace Project
             IWebElement btnreply = driver.FindElement(By.Name("replyClick"));
             btnreply.Click();
         }
-        static void replymsg(IWebDriver driver)
+        static void replymsg(IWebDriver driver, String strReply)
         {
             IWebElement txtreply = driver.FindElement(By.Id("replyText"));
-            txtreply.SendKeys("This is my message to you and it's very interesting.");
+            txtreply.SendKeys(strReply);
 
             IWebElement btnreplymsg = driver.FindElement(By.Name("submit"));
             btnreplymsg.Click();
@@ -390,7 +619,68 @@ namespace Project
             IWebElement btnlogout = driver.FindElement(By.CssSelector("[href*='logout.php']"));
             btnlogout.Click();
         }
+        static void signIn(IWebDriver driver, String strblnkSignIn)
+        {
+            IWebElement signInForm = driver.FindElement(By.Id("login_form"));
+            signInForm.SendKeys(strblnkSignIn;
+        }
 
+        static void tweetSpecChar(IWebDriver driver, String strTweet)
+        {
+            IWebElement tweetChar = driver.FindElement(By.Id("myTweet"));
+            tweetChar.SendKeys(strTweet);
+        }
+        static void blankTweet(IWebDriver driver, String strblktweet)
+        {
+            IWebElement blnkTweet = driver.FindElement(By.CssSelector("myTweet"));
+            blnkTweet.SendKeys(strblktweet);
+        }
+        static void editProfPic(IWebDriver driver)
+        {
+            IWebElement profPic = driver.FindElement(By.CssSelector("[href*='edit_photo.php']"));
+            profPic.Click();
+        }
+        static void TrendingPeople(IWebDriver driver)
+        {
+            IWebElement trending = driver.FindElement(By.Name("Trending"));
+            trending.Click();
+        }
+        static void email(IWebDriver driver, String strEmail)
+        {
+            driver.Url = "http://47.55.247.242/site1/signup.php";
 
+            IWebElement emailAd = driver.FindElement(By.Id("email"));
+            emailAd.SendKeys(strEmail);
+        }
+        static void register(IWebDriver driver, String strReg)
+        {
+            IWebElement btnreg = driver.FindElement(By.ClassName("btn btn-primary btn-lg btn-block login-button"));
+            btnreg.SendKeys(strReg);
+        }
+        static void phoneNum(IWebDriver driver, String strPhone)
+        {
+            IWebElement phoneNum = driver.FindElement(By.Id("phone"));
+             phoneNum.SendKeys(strPhone);
+        }
+        static void blankSignUp(IWebDriver driver, String strblnkReg)
+        {
+            IWebElement signUp = driver.FindElement(By.CssSelector("[href*='signup_proc.php']"));
+             signUp.SendKeys(strblnkReg);
+        }
+        static void pwrdMatch(IWebDriver driver)
+        {
+            IWebElement pwrd = driver.FindElement(By.Id("confirm"));
+             pwrd.Click();
+        }
+        static void address(IWebDriver driver, String strAddress)
+        {
+            IWebElement addresstxt = driver.FindElement(By.Id("address"));
+             addresstxt.SendKeys(strAddress);
+        }
+        static void postalCode(IWebDriver driver, String strPCode)
+        {
+            IWebElement pCode = driver.FindElement(By.Id("postalCode"));
+             pCode.SendKeys(strPCode);
+        }
     }
 }

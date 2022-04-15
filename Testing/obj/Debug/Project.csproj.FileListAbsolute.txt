@@ -7,3 +7,8 @@ C:\Users\keith\OneDrive\Desktop\School\QA\Testing\Testing\obj\Debug\Project.cspr
 C:\Users\keith\OneDrive\Desktop\School\QA\Testing\Testing\obj\Debug\Project.csproj.CopyComplete
 C:\Users\keith\OneDrive\Desktop\School\QA\Testing\Testing\obj\Debug\Testing.exe
 C:\Users\keith\OneDrive\Desktop\School\QA\Testing\Testing\obj\Debug\Testing.pdb
+C:\Users\ashle\Dropbox\PC (2)\Documents\1. SCHOOL\WINTER 2022\QA TESTING\QATesting-Ashley-Keith\QAProject2\Testing\obj\Debug\Project.csproj.AssemblyReference.cache
+C:\Users\ashle\Dropbox\PC (2)\Documents\1. SCHOOL\WINTER 2022\QA TESTING\QATesting-Ashley-Keith\QAProject2\Testing\obj\Debug\Project.csproj.SuggestedBindingRedirects.cache
+C:\Users\ashle\Dropbox\PC (2)\Documents\1. SCHOOL\WINTER 2022\QA TESTING\QATesting-Ashley-Keith\QAProject2\Testing\obj\Debug\Project.csproj.CoreCompileInputs.cache
+C:\Users\ashle\Dropbox\PC (2)\Documents\1. SCHOOL\WINTER 2022\QA TESTING\QATesting-Ashley-Keith\QAProject2\Testing\obj\Debug\Testing.exe
+C:\Users\ashle\Dropbox\PC (2)\Documents\1. SCHOOL\WINTER 2022\QA TESTING\QATesting-Ashley-Keith\QAProject2\Testing\obj\Debug\Testing.pdb
