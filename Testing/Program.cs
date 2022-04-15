@@ -32,7 +32,6 @@ namespace Project
             blnTest01 = UnitTests.Test1BadLogIn(driver);
             TestResult(blnTest01);
 
-
             //Test 2
             Console.WriteLine("Test2 - log in: ");
             Boolean blnTest02;
@@ -40,7 +39,7 @@ namespace Project
             TestResult(blnTest02);
 
             //Test3 - 
-            Console.WriteLine("Test3 - Tweet: ----Couldn't actually get this to work, but i think my logic is there");
+            Console.WriteLine("Test3 - Tweet: check t-text includes tweet text ----Couldn't actually get this to work, but i think my logic is there");
             Boolean blnTest03;
             blnTest03 = UnitTests.Test3Tweet(driver);
             TestResult(blnTest03);
@@ -194,7 +193,18 @@ namespace Project
             Boolean blnTest28;
             blnTest28 = UnitTests.Test28Logout(driver);
             TestResult(blnTest28);
+
+
+            Thread.Sleep(15000);
+            driver.Quit();
         }
+
+
+
+
+
+
+
         static void TestResult(Boolean blnResult)
         {
             if (blnResult)
